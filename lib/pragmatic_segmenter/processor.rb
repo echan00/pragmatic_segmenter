@@ -46,8 +46,7 @@ module PragmaticSegmenter
       return txt if txt.length < 2 && txt =~ /\A[a-zA-Z]*\Z/
       return if consecutive_underscore?(txt) || txt.length < 2
       txt.apply(
-        @language::ReinsertEllipsisRules::All,
-        @language::ExtraWhiteSpaceRule
+        @language::ReinsertEllipsisRules::All #,@language::ExtraWhiteSpaceRule
       )
 
       if txt =~ @language::QUOTATION_AT_END_OF_SENTENCE_REGEX
