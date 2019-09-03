@@ -80,7 +80,8 @@ module PragmaticSegmenter
 
     def check_for_punctuation(txt)
       if @language::Punctuations.any? { |p| txt.include?(p) }
-        process_text(txt)
+        #process_text(txt)
+        txt
       else
         txt
       end
