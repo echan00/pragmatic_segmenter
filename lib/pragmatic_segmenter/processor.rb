@@ -20,13 +20,13 @@ module PragmaticSegmenter
 
     def process(text:)
       @text = List.new(text: text).add_line_break
-      replace_abbreviations
-      replace_numbers
-      replace_continuous_punctuation
-      replace_periods_before_numeric_references
-      @text.apply(@language::Abbreviations::WithMultiplePeriodsAndEmailRule)
-      @text.apply(@language::GeoLocationRule)
-      @text.apply(@language::FileFormatRule)
+      #replace_abbreviations
+      #replace_numbers
+      #replace_continuous_punctuation
+      #replace_periods_before_numeric_references
+      #@text.apply(@language::Abbreviations::WithMultiplePeriodsAndEmailRule)
+      #@text.apply(@language::GeoLocationRule)
+      #@text.apply(@language::FileFormatRule)
       split_into_segments
     end
 
