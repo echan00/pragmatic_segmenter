@@ -57,16 +57,16 @@ module PragmaticSegmenter
     end
 
     def check_for_parens_between_quotes(txt)
-      return txt unless txt =~ @language::PARENS_BETWEEN_DOUBLE_QUOTES_REGEX
-      txt.gsub!(@language::PARENS_BETWEEN_DOUBLE_QUOTES_REGEX) do |match|
-        match.gsub(/\s(?=\()/, "\r").gsub(/(?<=\))\s/, "\r")
-      end
+      #return txt unless txt =~ @language::PARENS_BETWEEN_DOUBLE_QUOTES_REGEX
+      #txt.gsub!(@language::PARENS_BETWEEN_DOUBLE_QUOTES_REGEX) do |match|
+      #  match.gsub(/\s(?=\()/, "\r").gsub(/(?<=\))\s/, "\r")
+      #end
     end
 
     def replace_continuous_punctuation
-      @text.gsub!(@language::CONTINUOUS_PUNCTUATION_REGEX) do |match|
-        match.gsub(/!/, '&ᓴ&').gsub(/\?/, '&ᓷ&')
-      end
+      #@text.gsub!(@language::CONTINUOUS_PUNCTUATION_REGEX) do |match|
+      #  match.gsub(/!/, '&ᓴ&').gsub(/\?/, '&ᓷ&')
+      #end
     end
 
     def replace_periods_before_numeric_references
@@ -75,7 +75,7 @@ module PragmaticSegmenter
 
     def consecutive_underscore?(txt)
       # Rubular: http://rubular.com/r/fTF2Ff3WBL
-      txt.gsub(/_{3,}/, '').length.eql?(0)
+      #txt.gsub(/_{3,}/, '').length.eql?(0)
     end
 
     def check_for_punctuation(txt)
